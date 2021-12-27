@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles.css">
+    <title>I am tired of doing this todo lists</title>
+</head>
+<body>
+    <div id="app" class="container">
+        <theader> </theader>
+        <!-- <p>{{greetings}}</p> -->
+        <main>
+            <ul class="list" id="list">     
+                <titem v-for="(task, index) in tasks" :task="task.item" :done="task.done" :id="index" @del-task = "pdel" @check-done="tcheck"> </titem>
+            </ul>
+        </main>
+
+          
+        <tfooter @add-todo="addIt"></tfooter>
+
+    </div>
+
+    <script src="assets/js/vue.global.js"></script>
+    <script src="main.js" defer></script>
+
+    <script>
+        let todos = [
+            {
+                item : 'read books',
+                done : false
+            },
+            {
+                item : 'chill with big boys',
+                done : true
+            },
+            {
+                item : 'cook food',
+                done : false
+            }
+        ]
+
+       //let jtd = JSON.stringify(todos)
+        //localStorage.setItem("todos", jtd)
+
+
+
+        //ajim = JSON.parse(localStorage.getItem("todos"))
+        //console.log(ajim)
+       //console.log(localStorage)
+    </script>
+</body>
+</html>
